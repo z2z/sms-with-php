@@ -72,7 +72,7 @@ class Sms
             curl_setopt ($curl, CURLOPT_URL, "http://site6.way2sms.com/jsp/InstantSMS.jsp");
             $text = curl_exec($curl);
             $dom = new DOMDocument();
-            $dom->loadHTML($text);
+            @$dom->loadHTML($text);
             $action = $dom->getElementById("Action")->getAttribute('value');
 
             foreach ($pharr as $p)
